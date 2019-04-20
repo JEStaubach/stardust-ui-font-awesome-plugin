@@ -18,7 +18,7 @@ const faIcons = iconSets.map( iconSet => (
         ...acc,
         [`${iconSet[cur].prefix} ${iconSet[cur].iconName}`]: {
           isSvg: true,
-          icon: () => React.createElement(FontAwesomeIcon, {icon: iconSet[cur]}, null),
+          icon: () => <FontAwesomeIcon icon={iconSet[cur]} />,
         },
       };
     }
