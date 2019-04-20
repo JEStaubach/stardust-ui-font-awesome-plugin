@@ -62,3 +62,5 @@ typings/
 
 # vscode editor config
 .vscode
+
+dist

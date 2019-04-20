@@ -2,8 +2,10 @@
   "name": "stardust-ui-font-awesome-plugin",
   "version": "0.1.0",
   "description": "Plugin for stardust-ui that provides font awesome icons.",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
+    "start": "webpack --watch --mode development",
+    "build": "webpack --mode production",
     "test": "jest"
   },
   "repository": {
@@ -23,9 +25,18 @@
     "@fortawesome/free-regular-svg-icons": "^5.8.1",
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "webpack": "^4.30.0"
   },
   "peerDependencies": {
     "@stardust-ui/react": "^0.27.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "webpack-cli": "^3.3.0"
   }
 }
