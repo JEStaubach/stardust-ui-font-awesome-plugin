@@ -1,0 +1,31 @@
+{
+  "name": "stardust-ui-font-awesome-plugin",
+  "version": "0.1.0",
+  "description": "Plugin for stardust-ui that provides font awesome icons.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JEStaubach/stardust-ui-font-awesome-plugin.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JEStaubach/stardust-ui-font-awesome-plugin/issues"
+  },
+  "homepage": "https://github.com/JEStaubach/stardust-ui-font-awesome-plugin#readme",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-regular-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "react": "^16.8.6"
+  },
+  "peerDependencies": {
+    "@stardust-ui/react": "^0.27.0"
+  }
+}
