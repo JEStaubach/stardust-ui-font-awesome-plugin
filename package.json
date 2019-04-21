@@ -2,7 +2,7 @@
   "name": "stardust-ui-font-awesome-plugin",
   "version": "0.1.0",
   "description": "Plugin for stardust-ui that provides font awesome icons.",
-  "main": "dist/bundle.js",
+  "main": "./dist/bundle.js",
   "scripts": {
     "start": "webpack --watch --mode development",
     "prepare": "npm run build",
