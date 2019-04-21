@@ -5,6 +5,7 @@
   "main": "dist/bundle.js",
   "scripts": {
     "start": "webpack --watch --mode development",
+    "prepare": "npm run build",
     "build": "webpack --mode production",
     "test": "jest"
   },
