@@ -4,9 +4,9 @@
   "description": "Plugin for stardust-ui that provides font awesome icons.",
   "main": "./dist/bundle.js",
   "scripts": {
-    "start": "webpack --watch --mode development",
+    "start": "webpack --watch --mode development --config webpack.dev.js",
     "prepare": "npm run build",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production --config webpack.prod.js",
     "test": "jest"
   },
   "repository": {
@@ -21,16 +21,13 @@
   "homepage": "https://github.com/JEStaubach/stardust-ui-font-awesome-plugin#readme",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-brands-svg-icons": "^5.8.1",
-    "@fortawesome/free-regular-svg-icons": "^5.8.1",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "react": "^16.8.6",
     "webpack": "^4.30.0"
   },
   "peerDependencies": {
-    "@stardust-ui/react": "^0.27.0"
+    "@fortawesome/react-fontawesome": ">=0.1.4",
+    "react": ">=16.8.6",
+    "@stardust-ui/react": ">=0.27.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -38,6 +35,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
-    "webpack-cli": "^3.3.0"
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1"
   }
 }

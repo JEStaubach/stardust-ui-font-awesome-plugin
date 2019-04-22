@@ -1,31 +1,23 @@
 import React from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import * as freeSolidSvgIcons from '@fortawesome/free-solid-svg-icons';
-import * as freeBrandsSvgIcons from '@fortawesome/free-brands-svg-icons';
-import * as freeRegularSvgIcons from '@fortawesome/free-regular-svg-icons';
 
-
-const isMatch = key => ( key.match(/^fa[A-Z]/g) !== null );
-
-const iconSets = [freeSolidSvgIcons, freeBrandsSvgIcons, freeRegularSvgIcons];
-
-const faIcons = iconSets.map( iconSet => (
-  Object.keys(iconSet).reduce( (acc, cur) => {
-    if (isMatch(cur)) {
-      library.add(iconSet[cur]);
-      return {
-        ...acc,
-        [`${iconSet[cur].prefix} ${iconSet[cur].iconName}`]: {
-          isSvg: true,
-          icon: () => <FontAwesomeIcon icon={iconSet[cur]} />,
-        },
-      };
-    }
-    return acc;
-  }, {})
-)).reduce( (acc, curr) => ({ ...acc, ...curr }), {});
+const wrapLibrary = lib => {
+  return Object.keys(lib.definitions).reduce( (acc, prefix) => {
+    return {
+      ...acc,
+      ...Object.keys(lib.definitions[prefix]).reduce( (acc2, iconName) => {
+        return {
+          ...acc2,
+          [`${prefix} ${iconName}`]: {
+            isSvg: true,
+            icon: () => <FontAwesomeIcon icon={{prefix, iconName, icon: lib.definitions[prefix][iconName]}} />,
+          }
+        };
+      }, {})
+    };
+  }, {});
+}
 
 export {
-  faIcons,
+  wrapLibrary,
 };
